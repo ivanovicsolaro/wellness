@@ -1,0 +1,43 @@
+<ion-content fullscreen="true">
+  <div class="background">
+    <img class="logo-image" src="assets/logo.png" alt="Wellness">
+    <div class="title">
+      SERVICIOS PROFECIONALES DE BIENESTAR
+    </div>
+    <div class="grid-container">
+      <form [formGroup]="createAccountForm" (submit)="createAccount()">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="10" offset="1">
+              <ion-item>
+                <ion-label position="stacked">Código Empresa</ion-label>
+                <ion-input type="text" formControlName="companyCode"></ion-input>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="10" offset="1">
+              <ion-button type="submit" expand="block" color="medium">CREAR MI CUENTA</ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="10" offset="1">
+              <ion-button expand="block" color="success" routerLink="/login" routerDirection="forward">INICIAR SESIÓN</ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </form>
+    </div>
+  </div>
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button color="wellness" routerLink="/login" routerDirection="forward">
+      <ion-icon name="arrow-back-circle-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="wellness" class="ion-text-center">
+    <a style="color: white;">¿Necesitas ayuda para ingresar?</a>
+  </ion-toolbar>
+</ion-footer>

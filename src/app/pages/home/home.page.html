@@ -1,0 +1,21 @@
+<!-- <ion-header>
+  <ion-toolbar color="wellness">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-img class="logo-title" src='assets/logo_white.png'></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+<!-- <ion-content>
+  Home
+</ion-content> -->
+<ion-tabs>
+  <ion-tab-bar slot="bottom" color="wellness">
+    <ion-tab-button *ngFor="let tab of tabs" [tab]="tab.route">
+      <ion-icon [name]="tab.icon"></ion-icon>
+      <ion-label>{{ tab.label }}</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

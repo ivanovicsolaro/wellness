@@ -1,0 +1,115 @@
+<ion-header>
+  <ion-toolbar color="wellness">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Contacto</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header color="wellness">
+      <ion-card-title>Contáctanos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row >
+          <ion-col size="12">
+            <ion-img class="logo-image" src="assets/logo.png" [style]="logoStyle" style="margin: 0 auto;"></ion-img>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text color="wellness">
+              <p class="contact-text">
+                Hola! Puedes conectar al Programa a través de las siguientes vías. Nuestros profesionales te ayudarán a resolver las situaciones de la vida cotidiana.
+              </p>
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="5" offset="1">
+            <p class="ion-text-center"><b>Whatsapp</b></p>
+          </ion-col>
+          <ion-col size="5">
+            <p class="ion-text-center"><b>Envíanos tu consulta</b></p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="buttons">
+          <ion-col size="5" offset="1">
+            <ion-button expand="block" color="success" (click)="showButtonAlert('whatsapp')">
+              <ion-icon name="logo-whatsapp" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="5">
+            <ion-button expand="block" color="medium" (click)="showButtonAlert('showForm')">
+              <ion-icon name="mail" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row class="ion-margin-top">
+          <ion-col size="5" offset="1">
+            <p class="ion-text-center"><b>Número Gratuito</b></p>
+            <p class="ion-text-center"><b>0800 266 5243</b></p>
+          </ion-col>
+          <ion-col size="5">
+            <p class="ion-text-center"><b>Teléfono Alternativo</b></p>
+            <p class="ion-text-center"><b>+54 11 3988 4055</b></p>
+          </ion-col>
+        </ion-row>
+        <ion-row class="buttons ion-margin-top">
+          <ion-col size="5" offset="1">
+            <ion-button expand="block" color="medium" (click)="showButtonAlert('callNumberOne')">
+              <ion-icon name="call" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="5">
+            <ion-button expand="block" color="medium" (click)="showButtonAlert('callNumberTwo')">
+              <ion-icon name="call" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-button expand="full" color="wellness" (click)="showOutsideModal()">
+              Estoy fuera de Argentina
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <!-- <div *ngIf="method==null" style="padding: 10px; text-align: justify;">
+    <div style="background: #6096c4;margin: 15px;padding: 15px;border-radius: 5px;color: white;">
+      <span> Hola! Puedes conectar al Programa a través de las siguientes vías. Nuestros profesionales te ayudarán a resolver las situaciones de la vida cotidiana.</span>
+    </div>
+    <div style="width: 100%;height: 15px; clear:both"></div>
+    <div class="block_item" (click)="trigger('wsp')">
+      <span class="title">WhatsApp</span>
+      <ion-icon name="logo-whatsapp"></ion-icon>
+    </div>
+    <div class="block_item" (click)="trigger('form')">
+      <span class="title">Envíanos tu consulta</span>
+      <ion-icon name="mail"></ion-icon>
+    </div>
+
+    <div class="block_item tel" (click)="trigger('call')">
+      <span class="title"> Número Gratuito <br>
+        <font>
+          0800 266 5243</font>
+      </span>
+      <ion-icon name="call"></ion-icon>
+    </div>
+    <div class="block_item tel" (click)="trigger('call2')">
+      <span class="title"> Teléfono alternativo <br>
+        <font>
+          +54 11 3988 4055</font>
+      </span>
+      <ion-icon name="call"></ion-icon>
+    </div>
+
+    <div class="block_separator" (click)="openModal()">
+      <button class="message_send" (click)="openModal()">Estoy fuera de Argentina</button>
+    </div>
+  </div> -->
+</ion-content>

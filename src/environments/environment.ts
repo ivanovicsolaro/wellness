@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // apiUrl: 'http://192.168.100.195/wellness_backend/public/api/'
+  apiUrl: 'http://wellness.felipeblanco.com/api/'
 };
 
 /*

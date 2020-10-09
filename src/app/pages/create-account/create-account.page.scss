@@ -1,0 +1,30 @@
+ion-toolbar.header {
+  // --background: red;
+  --background: transparent;
+  --ion-color-base: transparent !important;
+}
+.background {
+  background-image: url(../../../assets/login/background-min.jpg);
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+img.logo-image {
+  max-width: 50%;
+}
+div.title{
+  background: #346699;
+  color: white;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+}
+div.grid-container{
+  position: absolute;
+  width: 100%;
+  bottom: 10%;
+}

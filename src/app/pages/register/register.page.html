@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="wellness">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/create-account"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrarse</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm" (submit)="register()">
+    <ion-list>
+      <ion-item lines="full">
+        <ion-label position="floating">Empresa:</ion-label>
+        <ion-input type="text" formControlName="company" readonly></ion-input>
+      </ion-item>
+      <app-ion-item-error *ngIf="errors.company" [error]="errors.company"></app-ion-item-error>
+      <ion-item lines="full">
+        <ion-label position="floating">Nombre:</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <app-ion-item-error *ngIf="errors.name" [error]="errors.name"></app-ion-item-error>
+      <ion-item lines="full">
+        <ion-label position="floating">Email:</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+      </ion-item>
+      <app-ion-item-error *ngIf="errors.email" [error]="errors.email"></app-ion-item-error>
+      <ion-item lines="full">
+        <ion-label position="floating">País:</ion-label>
+        <ion-select formControlName="country" interface="action-sheet">
+          <ion-select-option [value]=null>Seleccione</ion-select-option>
+          <ion-select-option *ngFor="let country of countries" [value]="country">{{ country.name }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <app-ion-item-error *ngIf="errors.country" [error]="errors.country"></app-ion-item-error>
+      <ion-item lines="full">
+        <ion-label position="floating">Contraseña:</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <app-ion-item-error *ngIf="errors.password" [error]="errors.password"></app-ion-item-error>
+      <ion-item lines="full">
+        <ion-label position="floating">Confirmar contraseña:</ion-label>
+        <ion-input type="password" formControlName="confirmPassword"></ion-input>
+      </ion-item>
+      <app-ion-item-error *ngIf="errors.confirmPassword" [error]="errors.confirmPassword"></app-ion-item-error>
+      <ion-item lines="full">
+        <ion-label class="label-long-text">
+          Confirmo los datos expresados arriba y me declaro responsable por la veracidad de los mismos.
+        </ion-label>
+        <ion-checkbox slot="start" color="wellness" formControlName="accept"></ion-checkbox>
+      </ion-item>
+      <app-ion-item-error *ngIf="errors.accept" [error]="errors.accept"></app-ion-item-error>
+    </ion-list>
+    <ion-button color="success" type="submit" expand="block">CREAR CUENTA</ion-button>
+  </form>
+</ion-content>

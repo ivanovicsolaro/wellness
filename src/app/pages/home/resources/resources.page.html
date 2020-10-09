@@ -1,0 +1,41 @@
+<ion-header color="wellness">
+  <ion-toolbar color="wellness">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <!-- <ion-img class="logo-title" src='assets/logo_white.png'></ion-img> -->
+      Recursos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row>
+      <ion-col class="ion-text-center grid-title">
+        <ion-text color="wellness">Recursos para el Bienestar</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-img src="assets/resources/resources.png"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="ion-text-center topics-title">
+        <ion-text color="wellness">Temas Disponibles</ion-text>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item lines="full" *ngFor="let topic of topics" [routerLink]="'list/' + topic.id">
+            <ion-label>
+              {{ topic.name }}
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
