@@ -8,7 +8,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="registerForm" (submit)="register()">
+  <form [formGroup]="registerForm" (submit)="showTermsConditionsModal()">
     <ion-list>
       <ion-item lines="full">
         <ion-label position="floating">Empresa:</ion-label>
@@ -27,7 +27,7 @@
       <app-ion-item-error *ngIf="errors.email" [error]="errors.email"></app-ion-item-error>
       <ion-item lines="full">
         <ion-label position="floating">País:</ion-label>
-        <ion-select formControlName="country" interface="action-sheet">
+        <ion-select formControlName="country" interface="action-sheet" cancelText="Cancelar" mode="ios">
           <ion-select-option [value]=null>Seleccione</ion-select-option>
           <ion-select-option *ngFor="let country of countries" [value]="country">{{ country.name }}</ion-select-option>
         </ion-select>

@@ -49,7 +49,7 @@ export class ResourcesListPage implements OnInit {
    * Load data
    */
   async loadData() {
-    this.globalSrv.showLoading();
+    // this.globalSrv.showLoading();
     this.isLoading = true;
     this.resources = [];
     let topic;
@@ -73,7 +73,7 @@ export class ResourcesListPage implements OnInit {
       r['icon'] = Object.hasOwnProperty.call(this.icons,r.type.name) ? this.icons[r.type.name] : 'help';
       return r;
     });
-    this.globalSrv.hideLoading();
+    // this.globalSrv.hideLoading();
     this.isLoading = false;
   }
 

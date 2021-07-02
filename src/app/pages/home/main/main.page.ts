@@ -15,6 +15,10 @@ export class MainPage implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Action that show options to the user
+   * @param type 
+   */
   async action(type: string) {
     const alert = await this.alertCtrl.create({
       header: '¿Donde desea ir?',
@@ -30,8 +34,14 @@ export class MainPage implements OnInit {
         {
           text: 'Ver video',
           handler: () => {
-            let videoId = type === 'benefits' ? 354015886 : 375651446;
-            this.router.navigate(['/tablinks/main/video', videoId]);
+            // let videoId = type === 'benefits' ? 472346173 : 375651446;
+            let videoId = type === 'benefits' ? 472346173 : 476598362;
+            // this.router.navigate(['/tablinks/main/video', videoId]);
+            const queryParams = {
+              type: 'main',
+              videoId
+            };
+            this.router.navigate(['/video'], {queryParams});
           }
         },
         {

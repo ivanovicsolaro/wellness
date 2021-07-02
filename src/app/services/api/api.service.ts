@@ -2,9 +2,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { from, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
+import { switchMap } from 'rxjs/operators';
 
 import { Plugins } from '@capacitor/core';
-import { switchMap } from 'rxjs/operators';
 const { Storage } = Plugins;
 
 @Injectable({
@@ -17,7 +17,7 @@ export class ApiService {
   headers: any;
 
   constructor(private http: HttpClient) { 
-    this.apiUrl = environment.apiUrl;
+    this.apiUrl = environment.apiUrl + 'api/';
     this.headers = new HttpHeaders({
       'Accept': 'application/json',
       'Content-Type': 'application/json'
@@ -35,7 +35,6 @@ export class ApiService {
       email,
       password
     };
-    console.log(url);
     return this.http.post(url, params, {headers: this.headers});
   }
 
@@ -50,6 +49,14 @@ export class ApiService {
         return this.http.get(url);
       })
     );
+  }
+
+  /**
+   * Check if user has session
+   */
+  isAuthenticated() : Observable<any> {
+    const url = `${this.apiUrl}is-authenticated`;
+    return this.http.get(url);
   }
 
   /**
@@ -98,6 +105,15 @@ export class ApiService {
   }
 
   /**
+   * Get communication detail by id
+   * @param id 
+   */
+  getCommunicationDetail(id: number) : Observable<any> {
+    const url = `${this.apiUrl}communication/detail/${id}`;
+    return this.http.get(url);
+  }
+
+  /**
    * Get topics list
    */
   getTopicList() : Observable<any> {
@@ -130,9 +146,22 @@ export class ApiService {
     return this.http.get(url);
   }
 
+  /**
+   * Send contact form data
+   * @param content 
+   */
   sendMessageContactForm(content: any) : Observable<any> {
     const url = `${this.apiUrl}user/contact-form`;
     const params = {...content};
     return this.http.post(url, params);
+  }
+
+  /**
+   * Get benefit detail by id
+   * @param id 
+   */
+  getBenefit(id: number) : Observable<any> {
+    const url = `${this.apiUrl}benefit/detail/${id}`;
+    return this.http.get(url);
   }
 }

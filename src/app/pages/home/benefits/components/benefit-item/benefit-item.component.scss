@@ -1,6 +1,12 @@
 .benefit-name {
-  text-align: center;
+  text-align: left;
   font-size: 1.2em;
   font-weight: bold;
   color: var(--ion-color-wellness);
+}
+
+ion-item{
+  border: 1px solid #eee;
+  margin: 5px;
+  border-radius: 5px;
 }

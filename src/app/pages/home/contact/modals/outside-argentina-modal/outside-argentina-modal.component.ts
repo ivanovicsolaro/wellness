@@ -9,12 +9,22 @@ import { AlertController, ModalController } from '@ionic/angular';
 
 export class OutsideArgentinaModalComponent implements OnInit {
 
+  // countries: any = [
+  //   { name: 'Uruguay', phoneNumber: '000 4135 9831 68' },
+  //   { name: 'Colombia', phoneNumber: '0180 0518 5202' },
+  //   { name: 'Chile', phoneNumber: '800 392658' },
+  //   { name: 'Perú', phoneNumber: '0 800 76744' },
+  //   { name: 'México', phoneNumber: '01800 993 470' }
+  // ];
   countries: any = [
-    { name: 'Uruguay', phoneNumber: '000 4135 9831 68' },
-    { name: 'Colombia', phoneNumber: '0180 0518 5202' },
-    { name: 'Chile', phoneNumber: '800 392658' },
-    { name: 'Perú', phoneNumber: '0 800 76744' },
-    { name: 'México', phoneNumber: '01800 993 470' }
+    { name: 'Chile', phoneNumber: '800392658' },
+    { name: 'Colombia', phoneNumber: '018005185202' },
+    { name: 'México', phoneNumber: '018000993470' },
+    { name: 'Panamá', phoneNumber: '5078336291' },
+    { name: 'Paraguay', phoneNumber: '0098004910004' },
+    { name: 'Perú', phoneNumber: '080076741' },
+    { name: 'Uruguay', phoneNumber: '0004135983168' },
+    { name: 'Venezuela', phoneNumber: '08001362648' }
   ];
 
   constructor(private modalCtrl: ModalController,

@@ -34,6 +34,9 @@ export class ResourceDetailPage implements OnInit {
     });
   }
 
+  /**
+   * Load data for a resource
+   */
   async loadData() {
     let resource;
     try {
@@ -43,13 +46,15 @@ export class ResourceDetailPage implements OnInit {
       resource = null;
     }
 
+    console.log(resource);
+
     this.resource = {...resource};
-    console.log(this.resource);
     if (this.resource && Object.hasOwnProperty.call(this.resource, 'type') && Object.hasOwnProperty.call(this.resource.type, 'name')) {
       this.resourceType = this.resource.type.name;
     }
     this.defaultHref = `${this.defaultHref}/list/${this.resource.topic_id}`;
-    // console.log(resource);
+    console.log(this.resource);
+    console.log(this.resourceType);
   }
 
 }

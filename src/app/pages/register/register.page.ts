@@ -1,26 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AlertController, NavController } from '@ionic/angular';
+import { AlertController, ModalController, NavController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api/api.service';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { TermsConditionsModalComponent } from './modals/terms-conditions-modal/terms-conditions-modal.component';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
+
 export class RegisterPage implements OnInit {
 
   companyCode: string;
   countries: any = [];
   registerForm: FormGroup;
   errors: any = {};
+  termsAndConditionsAccepted: boolean = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private navCtrl: NavController,
               private alertCtrl: AlertController,
+              private modalCtrl: ModalController,
               private apiSrv: ApiService,
               private formBuilder: FormBuilder,
               private globalSrv: GlobalService) { 
@@ -69,8 +73,31 @@ export class RegisterPage implements OnInit {
     this.globalSrv.hideLoading();
   }
 
+  /**
+   * Show modal with terms and conditions
+   */
+  async showTermsConditionsModal() {
+
+    if (this.termsAndConditionsAccepted) {
+      this.register();
+      return;
+    }
+    const modal = await this.modalCtrl.create({
+      component: TermsConditionsModalComponent
+    });
+    modal.onDidDismiss().then(({data}) => {
+      if (data) {
+        this.termsAndConditionsAccepted = true;
+        this.register();
+      }
+    });
+    return await modal.present();
+  }
+
+  /**
+   * Register a new user in the app
+   */
   async register() {
-    // this.globalSrv.showLoading();
     this.errors = {};
     let response;
     try {

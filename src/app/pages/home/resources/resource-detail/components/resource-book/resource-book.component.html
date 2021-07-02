@@ -1,0 +1,20 @@
+<ion-item lines="none">
+  <ion-label>
+    <p><strong>Enlace Libro:</strong></p>
+    <a [href]="resource?.resource_book?.link" target="_system">{{ resource?.resource_book?.link }}</a>
+  </ion-label>
+</ion-item>
+<ion-item lines="none">
+  <ion-label>
+    <p><strong>Portada:</strong></p>
+    <ion-thumbnail>
+      <ion-img [src]="generateBookUrlImage()"></ion-img>
+    </ion-thumbnail>
+  </ion-label>
+</ion-item>
+<ion-item lines="none" *ngIf="resource.resource_book.review">
+  <ion-label>
+    <p><strong>Reseña:</strong></p>
+    <div class="review" [innerHtml]="resource.resource_book.review "></div>
+  </ion-label>
+</ion-item>

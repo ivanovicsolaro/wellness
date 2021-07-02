@@ -21,6 +21,10 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'video',
+    loadChildren: () => import('./pages/video-player/video-player.module').then( m => m.VideoPlayerPageModule)
   }
 ];
 

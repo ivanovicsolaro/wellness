@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LinkComponent } from './link/link.component';
+import { ResourceVideoComponent } from './resource-video/resource-video.component';
+import { ResourceBookComponent } from './resource-book/resource-book.component';
 
 @NgModule({
-  declarations: [LinkComponent],
+  declarations: [LinkComponent,ResourceVideoComponent, ResourceBookComponent],
   imports: [
     CommonModule,
     IonicModule,
@@ -13,7 +15,7 @@ import { LinkComponent } from './link/link.component';
     FormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  exports: [LinkComponent]
+  exports: [LinkComponent,ResourceVideoComponent, ResourceBookComponent]
 })
 
 export class ResourceDetailComponentsModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class NewsPage implements OnInit {
   isLoading: boolean = true;
   communications: any = [];
   
-  constructor(private apiSrv: ApiService) { }
+  constructor(private apiSrv: ApiService,
+              private router: Router) { }
 
   ngOnInit() {
   }
@@ -39,6 +41,11 @@ export class NewsPage implements OnInit {
     console.log(communications);
     this.communications = [...communications];
     this.isLoading = false;
+  }
+
+  goToDetail(com) {
+    console.log(com);
+    this.router.navigate(['/tablinks/news/detail', com.id]);
   }
 
 }

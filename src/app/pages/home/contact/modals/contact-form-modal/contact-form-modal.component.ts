@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ModalController } from '@ionic/angular';
+import { LoadingController, ModalController } from '@ionic/angular';
 import { ApiService } from 'src/app/services/api/api.service';
 import { GlobalService } from 'src/app/services/global/global.service';
 
@@ -31,6 +31,7 @@ export class ContactFormModalComponent implements OnInit {
   };
 
   constructor(private modalCtrl: ModalController,
+              private loadingCtrl: LoadingController,
               private globalSrv: GlobalService,
               private apiSrv: ApiService,
               private formBuilder: FormBuilder) { 
@@ -54,27 +55,41 @@ export class ContactFormModalComponent implements OnInit {
       });
       return;
     }
-    this.globalSrv.showLoading();
+    const loading = await this.loadingCtrl.create({
+      message: 'Enviando'
+    });
+
+    loading.present();
 
     let contactForm;
-
+    let buttons = [];
+    let message = "";
     try {
       contactForm = await this.apiSrv.sendMessageContactForm(this.contactForm.value).toPromise();
+      message = contactForm.message;
     } catch(e) {
       console.error(e);
-      contactForm = null;
-    }
-
-    if (contactForm) {
-      const buttons = [{
+      message = (e && Object.hasOwnProperty.call('message')) ? e.message : 'Error al enviar formulario';
+      buttons = [{
         text: 'Aceptar',
         handler: () => {
           this.closeModal();
         }
       }];
-      this.globalSrv.showAlert('Éxito', contactForm.message, buttons);
+      contactForm = null;
     }
-    this.globalSrv.hideLoading();
+
+    await loading.dismiss();
+
+    if (contactForm) {
+      buttons = [{
+        text: 'Aceptar',
+        handler: () => {
+          this.closeModal();
+        }
+      }];
+    }
+    this.globalSrv.showAlert('Éxito', message, buttons, false);
   }
 
   /**

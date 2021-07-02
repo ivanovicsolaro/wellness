@@ -1,0 +1,12 @@
+<ion-title class="custom-title">
+  <ion-grid class="ion-align-items-center">
+    <ion-row>
+      <ion-col class="center-col-left">
+        <ion-img *ngIf="companyLogo" [src]='companyLogo' (ionError)="errorLoadingImage()" alt="Company"></ion-img>
+      </ion-col>
+      <ion-col class="center-col-right">
+        <ion-img class="ion-float-right" src='assets/logo_white.png'></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-title>

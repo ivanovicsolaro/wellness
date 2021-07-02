@@ -8,6 +8,7 @@ import { BenefitsPageRoutingModule } from './benefits-routing.module';
 
 import { BenefitsPage } from './benefits.page';
 import { BenefitItemModule } from './components/benefit-item/benefit-item.module';
+import { PageTitleModule } from 'src/app/components/page-title/page-title.module';
 
 @NgModule({
   imports: [
@@ -15,7 +16,8 @@ import { BenefitItemModule } from './components/benefit-item/benefit-item.module
     FormsModule,
     IonicModule,
     BenefitsPageRoutingModule,
-    BenefitItemModule
+    BenefitItemModule,
+    PageTitleModule
   ],
   declarations: [BenefitsPage]
 })

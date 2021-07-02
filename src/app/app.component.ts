@@ -43,6 +43,12 @@ export class AppComponent implements OnInit {
       selected: false
     },
     {
+      title: 'Contacto',
+      url: '/tablinks/contact',
+      icon: 'mail',
+      selected: false
+    },
+    {
       title: 'Salir',
       action: 'logout',
       icon: 'power',

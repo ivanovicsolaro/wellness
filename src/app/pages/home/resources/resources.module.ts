@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { ResourcesPageRoutingModule } from './resources-routing.module';
 
 import { ResourcesPage } from './resources.page';
+import { PageTitleModule } from 'src/app/components/page-title/page-title.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    ResourcesPageRoutingModule
+    ResourcesPageRoutingModule,
+    PageTitleModule
   ],
   declarations: [ResourcesPage]
 })

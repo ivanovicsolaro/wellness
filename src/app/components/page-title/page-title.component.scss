@@ -1,0 +1,25 @@
+ion-grid{
+  height: 80px;
+  ion-row{
+    height: 100%;
+    ion-col {
+      height: 100%;
+    }
+  }
+}
+
+ion-img{
+  max-width: 60%;
+  height: auto;
+}
+
+.center-col-left{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.center-col-right{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

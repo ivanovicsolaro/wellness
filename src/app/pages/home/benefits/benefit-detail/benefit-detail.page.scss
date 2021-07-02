@@ -1,0 +1,43 @@
+.play-video{
+  background-color: #99c566;
+  color: #ffffff;
+  width: 40%;
+  min-height: 50px;
+  padding: 10px;
+  display: block;
+  font-size: 1.5em;
+  position: absolute;
+  z-index: 1000;
+  bottom: 20%;
+  p {
+    float:left;
+    margin: 0 !important;
+    text-transform: uppercase;
+  }
+  ion-icon {
+    float:left;
+    margin-left: 5px;
+  }
+}
+
+.full-name {
+  font-weight: bold;
+}
+
+.grid-icons{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  .icon-container {
+    width: 20%;
+    float: left;
+  }
+  ion-img {
+    margin: 10px;
+  }
+  p.label {
+    font-size: 0.6em;
+    font-weight: bold;
+  }
+  
+}

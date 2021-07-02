@@ -4,6 +4,11 @@
   margin: 0 auto;
 }
 
-ion-tab-button.tab-selected{
-  color: gold;
+ion-tab-button.tab-selected, ion-tab-button.ion-activated{
+  // color: gold;
+  color: #99c566 !important;
 }
+
+// ion-tab-button{
+//   --color-selected: #99c566;
+// }

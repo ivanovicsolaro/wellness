@@ -1,0 +1,30 @@
+<ion-header color="wellness">
+  <ion-toolbar color="wellness">
+    <ion-buttons slot="start">
+      <!-- <ion-menu-button></ion-menu-button> -->
+      <ion-back-button defaultHref="tablinks/news"></ion-back-button>
+    </ion-buttons>
+    <app-page-title></app-page-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid class="ion-no-padding">
+    <ion-row *ngIf="isLoading; else loaded">
+      <ion-col class="ion-text-center ion-padding">
+        <ion-spinner></ion-spinner>
+      </ion-col>
+    </ion-row>
+    <ng-template #loaded>
+      <ion-row>
+        <ion-col class="ion-text-center grid-title">
+          <ion-text color="wellness">{{ com?.title }}</ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col class="ion-padding">
+          <div [innerHtml]="com.content"></div>
+        </ion-col>
+      </ion-row>
+    </ng-template>
+  </ion-grid>
+</ion-content>

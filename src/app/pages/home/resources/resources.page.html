@@ -3,10 +3,7 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>
-      <!-- <ion-img class="logo-title" src='assets/logo_white.png'></ion-img> -->
-      Recursos
-    </ion-title>
+    <app-page-title></app-page-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -29,8 +26,9 @@
     <ion-row>
       <ion-col>
         <ion-list>
-          <ion-item lines="full" *ngFor="let topic of topics" [routerLink]="'list/' + topic.id">
-            <ion-label>
+          <ion-item lines="none" *ngFor="let topic of topics" [routerLink]="'list/' + topic.id">
+            <ion-icon name="caret-forward" slot="start" color="wellness"></ion-icon>
+            <ion-label color ="wellness">
               {{ topic.name }}
             </ion-label>
           </ion-item>

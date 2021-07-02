@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CreateAccountPageRoutingModule } from './create-account-routing.module';
 
 import { CreateAccountPage } from './create-account.page';
+import { FooterLoginModule } from 'src/app/components/footer-login/footer-login.module';
 
 @NgModule({
   imports: [
@@ -14,7 +15,8 @@ import { CreateAccountPage } from './create-account.page';
     FormsModule,
     ReactiveFormsModule,
     IonicModule,
-    CreateAccountPageRoutingModule
+    CreateAccountPageRoutingModule,
+    FooterLoginModule
   ],
   declarations: [CreateAccountPage]
 })

@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: BenefitsPage
+  },
+  {
+    path: 'detail/:id',
+    loadChildren: () => import('./benefit-detail/benefit-detail.module').then( m => m.BenefitDetailPageModule)
   }
 ];
 
@@ -14,4 +18,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
+
 export class BenefitsPageRoutingModule {}

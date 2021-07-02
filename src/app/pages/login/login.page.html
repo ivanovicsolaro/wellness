@@ -2,7 +2,7 @@
   <div class="background">
     <img class="logo-image" src="assets/logo.png" alt="Wellness">
     <div class="title">
-      SERVICIOS PROFECIONALES DE BIENESTAR
+      SERVICIOS PROFESIONALES DE BIENESTAR
     </div>
     <div class="grid-container">
       <form [formGroup]="loginForm" (submit)="login()">
@@ -10,16 +10,16 @@
           <ion-row>
             <ion-col size="10" offset="1">
               <ion-item>
-                <ion-label position="fixed">Usuario</ion-label>
-                <ion-input type="text" formControlName="username"></ion-input>
+                <!-- <ion-label position="fixed">Usuario</ion-label> -->
+                <ion-input type="text" placeholder="Usuario" formControlName="username" clearInput></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
           <ion-row>
             <ion-col size="10" offset="1">
               <ion-item>
-                <ion-label position="fixed">Contraseña</ion-label>
-                <ion-input type="password" formControlName="password"></ion-input>
+                <!-- <ion-label position="fixed">Contraseña</ion-label> -->
+                <ion-input type="password" placeholder="Contraseña" formControlName="password" clearInput></ion-input>
               </ion-item>
             </ion-col>
           </ion-row>
@@ -36,8 +36,9 @@
     </div>
   </div>
 </ion-content>
-<ion-footer>
+<app-footer-login></app-footer-login>
+<!-- <ion-footer>
   <ion-toolbar color="wellness" class="ion-text-center">
     <a style="color: white;">¿Necesitas ayuda para ingresar?</a>
   </ion-toolbar>
-</ion-footer>
+</ion-footer> -->

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button [defaultHref]="defaultHref"></ion-back-button>
     </ion-buttons>
-    <ion-title>Recurso Detalle</ion-title>
+    <ion-title>{{ resource?.type?.name }}</ion-title>
     <ion-buttons slot="primary">
       <ion-button (click)="loadData()">
         <ion-icon name="sync" slot="icon-only"></ion-icon>
@@ -24,11 +24,17 @@
           <ion-item lines="none">
             <ion-label>
               <p><strong>Descripción:</strong></p>
-              <div [innerHtml]="resource.description"></div>
+              <div class="description" [innerHtml]="resource.description"></div>
             </ion-label>
           </ion-item>
           <ng-container *ngIf="resourceType === 'Enlace'">
             <app-resource-link [resource]="resource"></app-resource-link>
+          </ng-container>
+          <ng-container *ngIf="resourceType === 'Video'">
+            <app-resource-video [resource]="resource"></app-resource-video>
+          </ng-container>
+          <ng-container *ngIf="resourceType === 'Libro'">
+            <app-resource-book [resource]="resource"></app-resource-book>
           </ng-container>
         </ion-list>
       </ion-col>

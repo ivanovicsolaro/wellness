@@ -30,12 +30,12 @@
                 <ion-text color="wellness">No hay registros.</ion-text>
               </ion-label>
             </ion-item>
-            <ion-item lines="full" *ngFor="let resource of resources" detail (click)="detail(resource)">
+            <ion-item lines="none" *ngFor="let resource of resources" detail (click)="detail(resource)" color="wellness">
               <ion-label>
-                <p><strong>{{ resource.type.name }}</strong></p>
-                <p><strong>{{ resource.name }}</strong></p>
+                <p class="type"><strong>{{ resource.type.name }}</strong></p>
+                <p class="name">{{ resource.name }}</p>
               </ion-label>
-              <ion-icon [name]="resource.icon" slot="start" color="wellness"></ion-icon>
+              <ion-icon [name]="resource.icon" slot="start"></ion-icon>
             </ion-item>
           </ion-list>
         </ion-col>

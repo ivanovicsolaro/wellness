@@ -8,6 +8,7 @@ import { RegisterPageRoutingModule } from './register-routing.module';
 
 import { RegisterPage } from './register.page';
 import { IonItemErrorModule } from 'src/app/components/ion-item-error/ion-item-error.module';
+import { TermsConditionsModalModule } from './modals/terms-conditions-modal/terms-conditions-modal.module';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { IonItemErrorModule } from 'src/app/components/ion-item-error/ion-item-e
     ReactiveFormsModule,
     IonicModule,
     RegisterPageRoutingModule,
-    IonItemErrorModule
+    IonItemErrorModule,
+    TermsConditionsModalModule
   ],
   declarations: [RegisterPage]
 })

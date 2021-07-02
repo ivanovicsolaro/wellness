@@ -7,10 +7,6 @@ const routes: Routes = [
   {
     path: '',
     component: MainPage
-  },
-  {
-    path: 'video/:videoId',
-    loadChildren: () => import('./video/video.module').then( m => m.VideoPageModule)
   }
 ];
 

@@ -9,6 +9,7 @@ import { ContactPageRoutingModule } from './contact-routing.module';
 import { ContactPage } from './contact.page';
 import { ContactFormModalModule } from './modals/contact-form-modal/contact-form-modal.module';
 import { OutsideArgentinaModalModule } from './modals/outside-argentina-modal/outside-argentina-modal.module';
+import { PageTitleModule } from 'src/app/components/page-title/page-title.module';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { OutsideArgentinaModalModule } from './modals/outside-argentina-modal/ou
     IonicModule,
     ContactPageRoutingModule,
     ContactFormModalModule,
-    OutsideArgentinaModalModule
+    OutsideArgentinaModalModule,
+    PageTitleModule
   ],
   declarations: [ContactPage]
 })
